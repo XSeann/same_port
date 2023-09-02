@@ -4,7 +4,8 @@
     "socket.io": "^4.7.2"
   },
   "scripts": {
-    "start": "node server.js"
+    "start": "node backend/server.js",
+    "build" : "npm install && npm --prefix frontend && npm run build --prefix frontend"
   },
   "name": "backend",
   "version": "1.0.0",
