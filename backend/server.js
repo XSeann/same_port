@@ -4,7 +4,7 @@ var http = require('http').createServer(app);
 var io = require('socket.io')(http);
 
 app.get('/', function (req, res) {
-  res.sendFile(__dirname + '/frontend/build/index.html');
+  res.sendFile(__dirname + '../frontend/build/index.html');
 });
 
 http.listen(process.env.PORT || 3000, function() {
