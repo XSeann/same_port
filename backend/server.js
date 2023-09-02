@@ -6,8 +6,11 @@ const path = require('path')
 
 
 app.get('/', function (req, res) {
-  res.sendFile(path.resolve('/frontend/build', 'index.html'));
+  res.sendFile(__dirname.replace('backend', 'frontend') + '/build/index.html');
 });
+
+//console.log(path.resolve().replace('backend', 'frontend'))
+//console.log(__dirname.replace('backend', 'frontend') + '/build/index.html')
 
 http.listen(process.env.PORT || 3000, function() {
   var host = http.address().address
