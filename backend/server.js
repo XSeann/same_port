@@ -2,9 +2,11 @@ var express = require('express')
 var app = express()
 var http = require('http').createServer(app);
 var io = require('socket.io')(http);
+const path = require('path')
+
 
 app.get('/', function (req, res) {
-  res.sendFile('/frontend/build/index.html');
+  res.sendFile(path.resolve('/frontend/build', 'index.html'));
 });
 
 http.listen(process.env.PORT || 3000, function() {
