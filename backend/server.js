@@ -6,7 +6,7 @@ const path = require('path')
 
 
 app.get('/', function (req, res) {
-  res.sendFile(__dirname.replace('backend', 'frontend') + '/build/index.html');
+  res.sendFile(__dirname + '/build/index.html');
 });
 
 //console.log(path.resolve().replace('backend', 'frontend'))
