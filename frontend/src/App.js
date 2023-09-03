@@ -22,7 +22,7 @@ const App = () => {
     <div className="App">
       {message.length && message.map(data => 
         <div>
-          {data}
+          {data} num
         </div>
       )}
       <button onClick={send}>SEND</button>
