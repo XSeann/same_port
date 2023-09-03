@@ -11,7 +11,7 @@ const App = () => {
     socket.emit("chat message", 5, "6", { 7: Uint8Array.from([8]) });
 
     // receive a message from the server
-    socket.on("chat message", (...args) => {
+    socket.on("chat message", (args) => {
       setMessage(e => [...e, args])
       console.log(args)
     });
