@@ -4,11 +4,12 @@ import { io } from 'socket.io-client'
 
 const App = () => {
   const [message, setMessage] = useState([])
+
   const send = () => {
     const socket = io();
 
-    // send a message to the server
-    socket.emit("chat message", 5, "6", { 7: Uint8Array.from([8]) });
+    // send a message to the server , "6", { 7: Uint8Array.from([8]) }
+    socket.emit("chat message", Math.random() * 10);
 
     // receive a message from the server
     socket.on("chat message", (args) => {
