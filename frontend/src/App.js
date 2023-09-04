@@ -19,6 +19,7 @@ const App = () => {
   }
 
   useEffect(() => {
+    const socket = io();
     // receive a message from the server
     socket.on("chat message", (args) => {
       setMessage(e => [...e, args])
