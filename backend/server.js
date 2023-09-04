@@ -21,7 +21,6 @@ http.listen(process.env.PORT || 3000, function() {
 
 io.on('connection', function(socket) {
   console.log('Client connected to the WebSocket');
-  console.log(socket)
 
   socket.on('disconnect', () => {
     console.log('Client disconnected');
@@ -30,7 +29,7 @@ io.on('connection', function(socket) {
   socket.on('chat message', function(msg) {
     console.log("Received a chat message");
     console.log(msg)
-    io.emit('chat message', 'msg');
+    socket.broadcast.emit('chat message', 'msg');
   });
 
   
