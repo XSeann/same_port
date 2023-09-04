@@ -5,8 +5,12 @@ var io = require('socket.io')(http);
 const path = require('path')
 
 const __dirname1 = path.resolve()
+
+/*app.get('*', (req, res) => {
+  res.sendFile(__dirname + '/index.html')
+})*/
 app.use(express.static(path.join(__dirname1, '/frontend/build')))
-app.get('*', function (req, res) {
+app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname1, 'frontend', 'build', 'index.html'));
 });
 
@@ -29,7 +33,7 @@ io.on('connection', function(socket) {
   socket.on('chat message', function(msg) {
     console.log("Received a chat message");
     console.log(msg)
-    socket.emit('chat message', 'msg');
+    io.emit('chat message', 'msg');
   });
 
   
