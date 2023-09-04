@@ -21,6 +21,7 @@ http.listen(process.env.PORT || 3000, function() {
 
 io.on('connection', function(socket) {
   console.log('Client connected to the WebSocket');
+  console.log(socket)
 
   socket.on('disconnect', () => {
     console.log('Client disconnected');
