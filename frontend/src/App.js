@@ -25,7 +25,7 @@ const App = () => {
       setMessage(e => [...e, args])
       console.log(args)
     });
-  })
+  }, [message])
 
   return (
     <div className="App">
