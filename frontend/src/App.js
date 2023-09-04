@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 import { io } from 'socket.io-client'
 
@@ -17,6 +17,14 @@ const App = () => {
       console.log(args)
     });
   }
+
+  useEffect(() => {
+    // receive a message from the server
+    socket.on("chat message", (args) => {
+      setMessage(e => [...e, args])
+      console.log(args)
+    });
+  })
 
   return (
     <div className="App">
